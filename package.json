@@ -1,0 +1,23 @@
+{
+  "name": "dot-site",
+  "version": "1.0.0",
+  "description": "The neondot organization website",
+  "main": "index.js",
+  "dependencies": {
+    "snowpack": "^3.0.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neondot/dot-site.git"
+  },
+  "author": "Daniele Borra <daniele.borra.93@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neondot/dot-site/issues"
+  },
+  "homepage": "https://github.com/neondot/dot-site#readme"
+}
