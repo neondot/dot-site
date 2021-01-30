@@ -17,7 +17,7 @@ For more information see the [Template Guide]().
 
 ### Example
 ```js
-import { DotComponent, html, register } from 'dot';
+import { DotComponent, html, register } from '@neondot/dot';
 // import { html } from 'lit-html'; // You can also import it from lit-html 
 
 class CustomComponent extends DotCompnent {

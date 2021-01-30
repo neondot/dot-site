@@ -4,10 +4,15 @@
   "description": "The neondot organization website",
   "main": "index.js",
   "dependencies": {
+    "@neondot/dot": "0.0.1",
+    "@neondot/dot-loader": "0.0.1",
+    "gsap": "^3.6.0",
+    "lit-html": "^1.3.0",
     "snowpack": "^3.0.11"
   },
   "devDependencies": {},
   "scripts": {
+    "serve": "snowpack dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

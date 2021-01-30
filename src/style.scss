@@ -1,0 +1,15 @@
+$black: #171717;
+$white: #fafafa;
+
+body {
+  margin: 0;
+  background-color: $black;
+  color: $white;
+
+  font-family: sans-serif;
+}
+
+base-navigator::part(a) {
+  text-decoration: none;
+  color: $black;
+}
