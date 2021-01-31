@@ -1,3 +1,4 @@
+import HomeHero from '../components/HomeHero';
 import { DotRoute, html, register } from '@neondot/dot';
 import gsap from 'gsap';
 
@@ -10,7 +11,7 @@ class ViewHome extends DotRoute {
     this.path = '/';
 
     this.$template = () => html`
-      <h1 ref="title">Homepage</h1>
+      <home-hero></home-hero>
     `;
   }
   

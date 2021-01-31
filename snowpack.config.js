@@ -7,7 +7,7 @@ module.exports = {
   },
   plugins: [
     ['@neondot/dot-loader'],
-    ['./sass-loader']
+    ['@snowpack/plugin-sass']
   ],
   routes: [
     {
