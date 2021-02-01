@@ -12,14 +12,7 @@ class HomeHero extends DotComponent {
       </style>
       <div class="home-hero">
         <div class="home-hero__title">
-          <span>N</span>
-          <span>e</span>
-          <span>o</span>
-          <span>n</span>
-          <span>&nbsp</span>
-          <span>D</span>
-          <span>o</span>
-          <span>t</span>
+          <span>N</span><span>e</span><span>o</span><span>n</span><span>&nbsp</span><span>D</span><span>o</span><span>t</span>
         </div>
       </div>
     `;
