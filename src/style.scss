@@ -1,5 +1,4 @@
-$black: #171717;
-$white: #fafafa;
+@import './scss/colors.scss';
 
 @font-face {
   font-family: 'Beon';
@@ -8,8 +7,8 @@ $white: #fafafa;
 
 body {
   margin: 0;
-  background-color: $black;
-  color: $white;
+  background-color: $white;
+  color: $black;
 
   font-family: sans-serif;
 
