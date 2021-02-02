@@ -7,7 +7,8 @@ module.exports = {
     out: 'docs',
   },
   mount: {
-    src: "/"
+    src: "/",
+    public: { url: "/", static: true, resolve: false }
   },
   plugins: [
     ['@neondot/dot-loader'],
