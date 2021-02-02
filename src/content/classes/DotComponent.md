@@ -53,7 +53,7 @@ Once you're done declaring and registering the component you can use it inside o
 
 ### $attributes
 Type: `any`
-<br><br>
+<br>
 This is a particular propery, it is basically an object where each key is an attribute watched by the web component (so previously defined in the static getter `static get observedAttributes()` as value inside the return array) and each value is the value of the attribute, so a `string` (as specs HTML attributes only allowed type is string).
 
 #### Usage
@@ -79,12 +79,12 @@ console.log(this.$attributes.name);
 
 ### $data
 Type: `object`
-<br><br>
+<br>
 This is the main store for the component reactive datas, every property inside this object when changed, and when needed, will trigger an update of the current component template. You can also watch changes with the `$watchers` 
 
 ### $watchers
 Type: `Map<string, Function>`
-<br><br>
+<br>
 This is a `Map`, containing for each key that maps to a `$data` property a function that will be triggered when the associated `$data` property changes. The `newValue` and the `oldValue` are respectively passed as arguments to the callback function.
 
 #### Usage
@@ -98,17 +98,17 @@ component.$data.name = 'bar';
 ```
 ### $parent
 Type: `DotComponent`
-<br><br>
+<br>
 The current component parent. This is the `DotComponent` passed as parent when calling `app.mount()` for your current componet
 
 ### $el
 Type: `ShadowRoot`
-<br><br>
+<br>
 The current custom element shadowroot, equalt to `this.shadowRoot` where `this` is a custom element instance.
 
 ### $refs
 Type: `any`
-<br><br>
+<br>
 A collection of all the children with a specified `ref` attribute. Every property in this object corresponds to the actual `DotComponent` instantiated with the `ref` attribute value as the property key. For example writing `<custom-element ref="customElement"></custom-element>` will make the `CustmoElement` componet instance available in
 `this.$refs.customElement`.
 
@@ -121,7 +121,7 @@ console.log(this.$refs.customElement.$data.name); // Will log the value of the n
 
 ### get $children
 type: `readonly` `Array<DotComponent>`
-<br><br>
+<br>
 An array of all the direct children mounted on the app `$container` DOM Node.
 
 ---

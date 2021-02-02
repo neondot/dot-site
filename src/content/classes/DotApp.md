@@ -20,24 +20,24 @@ app.$store; // This will be an empty store
 
 ### $container
 Type: `HTMLElement`
-<br><br>
+<br>
 The DOM Node used as the app container
 
 ### $store
 Type: `DotStore`
-<br><br>
+<br>
 The current store for the app
 
 ### $router
 Type: `DotRouter`
-<br><br>
+<br>
 The current router for the app
 
 ---
 
 ### get $children
 type: `readonly` `Array<DotComponent>`
-<br><br>
+<br>
 An array of all the direct children mounted on the app `$container` DOM Node.
 
 ---
