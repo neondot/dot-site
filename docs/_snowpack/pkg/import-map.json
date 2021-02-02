@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "@neondot/dot": "./@neondot/dot.js",
+    "gsap": "./gsap.js"
+  }
+}

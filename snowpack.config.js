@@ -4,6 +4,7 @@ module.exports = {
   },
   buildOptions: {
     htmlFragments: true,
+    out: 'docs',
   },
   mount: {
     src: "/"

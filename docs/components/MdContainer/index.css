@@ -1,0 +1,57 @@
+.md-container .container {
+  width: 80vw;
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.8em;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.md-container .container h1 {
+  font-family: "Beon";
+  color: #ff6ab2ff;
+  font-weight: normal;
+  text-shadow: 0px 0px 10px #ff6ab2ff;
+}
+.md-container .container h2 {
+  font-family: "Beon";
+  margin-top: 80px;
+  color: #ffa1f3ff;
+  font-weight: normal;
+  text-shadow: 0px 0px 5px #ffa1f3ff;
+  letter-spacing: 0.02em;
+}
+.md-container .container a {
+  text-decoration: none;
+  color: #6fc5faff;
+  text-shadow: 0px 0px 5px #6fc5faff;
+}
+.md-container .container a:hover {
+  text-decoration: underline;
+}
+.md-container .container a code {
+  color: #6fc5faff;
+}
+.md-container .container code {
+  color: #f6bb89ff;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #313131;
+}
+.md-container .container table {
+  margin-top: 40px;
+  border: 1px solid #84fbcbff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #84fbcbff, 0px 0px 10px #84fbcbff inset;
+}
+.md-container .container table thead th {
+  padding: 10px 15px;
+}
+.md-container .container table thead th:nth-child(1) {
+  min-width: 20%;
+}
+.md-container .container table tbody td {
+  padding: 10px 15px;
+}
+.md-container .container table tbody td:first-child {
+  text-align: center;
+}

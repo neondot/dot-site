@@ -1,0 +1,139 @@
+<h1>DotComponent</h1>
+<p>This is the base component class to extend when creating a custom component. You don't need to instanciate an object using this class. Create your own class extending this one.
+&lt;br&gt;&lt;br&gt;
+The constructor takes no arguments, so you won't need to pass anything in the <code>super()</code> call.
+&lt;br&gt;&lt;br&gt;
+Every component needs to declare at least a <code>$template</code> function and a static getter containing the tag to use in
+the html. The template function is a factory function returning a tagged template string using the <code>html</code> tag (imported from lit-html). Inside the string you can write your HTML thath will be converted to the actual DOM by the lit-html renderer.
+&lt;br&gt;
+The static getter should return a string with a valid custom component tag name (containing at least an hyphen) like
+this <code>static get tag() { return 'my-name' }</code>
+&lt;br&gt;&lt;br&gt;
+<strong>Before using the tag in your HTML templates and other places in your application you need to register the component and let the <code>document</code> know about your element</strong> to do so you can use the <code>register(component : DotComponentContructor)</code>
+helper.
+&lt;br&gt;&lt;br&gt;
+For more information see the <a href="">Template Guide</a>.</p>
+<h3>Example</h3>
+<pre><code class="language-js">import { DotComponent, html, register } from '@neondot/dot';
+// import { html } from 'lit-html'; // You can also import it from lit-html 
+
+class CustomComponent extends DotCompnent {
+  static get tag() { return 'custom-component' }
+
+  constructor() {
+    super();
+
+    this.$template = () =&gt; html`
+      &lt;!-- Some css why not... will be scoped to the component --&gt;
+      &lt;style&gt;
+        h1 {
+          color: red;
+        }
+      &lt;/style&gt;
+      &lt;h1&gt;Custom title here&lt;/h1&gt;
+      &lt;!-- You can also import other custom components --&gt;
+      &lt;another-custom-component&gt;&lt;/another-custom-component&gt;
+    `;
+
+    // Insert your custom logic here
+  }
+}
+
+// IMPORTANT register your component, this will use the class and the
+// static declared tag getter to tell the document that your component
+// exist and it is so called
+register(CustomComponent);
+</code></pre>
+<p>Once you're done declaring and registering the component you can use it inside other components templates litterals as you normally wold with the defined tag like so <code>&lt;div&gt;&lt;my-component attr=&quot;value&quot;&gt;&lt;/my-component&gt;&lt;/div&gt;</code> or mount it on another component or the app continer with the <code>mount</code> (<code>app.mount(MyComponentInstance, null)</code>) method.</p>
+<h2>APIs</h2>
+<h3>$attributes</h3>
+<p>Type: <code>any</code>
+&lt;br&gt;&lt;br&gt;
+This is a particular propery, it is basically an object where each key is an attribute watched by the web component (so previously defined in the static getter <code>static get observedAttributes()</code> as value inside the return array) and each value is the value of the attribute, so a <code>string</code> (as specs HTML attributes only allowed type is string).</p>
+<h4>Usage</h4>
+<pre><code class="language-js">// For example on a component declared like this
+class CustomComponent extends DotComponent {
+  public get observedAttributes() { return ['name'] }
+
+  constructor() {
+    super();
+
+    // The template will render with the name attribute value and re-render
+    // automatically on each change
+    this.$template = html`&lt;div&gt;${this.getAttribute('name')}&lt;/div&gt;`;
+  }
+}
+
+const customComponent = new CustomComponent();
+// The 'name' attribute value will be reflected in the $attributes.name
+console.log(this.$attributes.name);
+</code></pre>
+<h3>$data</h3>
+<p>Type: <code>object</code>
+&lt;br&gt;&lt;br&gt;
+This is the main store for the component reactive datas, every property inside this object when changed, and when needed, will trigger an update of the current component template. You can also watch changes with the <code>$watchers</code></p>
+<h3>$watchers</h3>
+<p>Type: <code>Map&lt;string, Function&gt;</code>
+&lt;br&gt;&lt;br&gt;
+This is a <code>Map</code>, containing for each key that maps to a <code>$data</code> property a function that will be triggered when the associated <code>$data</code> property changes. The <code>newValue</code> and the <code>oldValue</code> are respectively passed as arguments to the callback function.</p>
+<h4>Usage</h4>
+<pre><code class="language-js">component.$data.name = 'foo';
+component$watchers.set('foo', (newValue, oldValue) =&gt; {
+  console.log(newValue); // Will log 'bar'
+  console.log(oldValye); // Will log 'foo'
+});
+component.$data.name = 'bar';
+</code></pre>
+<h3>$parent</h3>
+<p>Type: <code>DotComponent</code>
+&lt;br&gt;&lt;br&gt;
+The current component parent. This is the <code>DotComponent</code> passed as parent when calling <code>app.mount()</code> for your current componet</p>
+<h3>$el</h3>
+<p>Type: <code>ShadowRoot</code>
+&lt;br&gt;&lt;br&gt;
+The current custom element shadowroot, equalt to <code>this.shadowRoot</code> where <code>this</code> is a custom element instance.</p>
+<h3>$refs</h3>
+<p>Type: <code>any</code>
+&lt;br&gt;&lt;br&gt;
+A collection of all the children with a specified <code>ref</code> attribute. Every property in this object corresponds to the actual <code>DotComponent</code> instantiated with the <code>ref</code> attribute value as the property key. For example writing <code>&lt;custom-element ref=&quot;customElement&quot;&gt;&lt;/custom-element&gt;</code> will make the <code>CustmoElement</code> componet instance available in
+<code>this.$refs.customElement</code>.</p>
+<h4>Usage</h4>
+<pre><code class="language-js">console.log(this.$refs.customElement.$data.name); // Will log the value of the name property in the $data of the CustomElement instance
+</code></pre>
+<hr>
+<h3>get $children</h3>
+<p>type: <code>readonly</code> <code>Array&lt;DotComponent&gt;</code>
+&lt;br&gt;&lt;br&gt;
+An array of all the direct children mounted on the app <code>$container</code> DOM Node.</p>
+<hr>
+<h3>mounted()</h3>
+<h4>Arguments</h4>
+<p><code>no args</code></p>
+<h4>Description</h4>
+<p>The callback to call when the component is mounted on DOM Node.</p>
+<h4>Usage</h4>
+<pre><code class="language-js">this.mounted = () =&gt; { console.log('mounted!', this) }; // Will log when the component is moutned on the DOM Node
+</code></pre>
+<h3>destroyed()</h3>
+<h4>Arguments</h4>
+<p><code>no args</code></p>
+<h4>Description</h4>
+<p>The callback to call when the component is removed from the DOM Node. Useful for making cleanup works.</p>
+<h4>Usage</h4>
+<pre><code class="language-js">this.destroyed = () =&gt; {
+  delete this.someInstance;
+  removeTimeoud(id);
+  // And other cleanups
+};
+</code></pre>
+<h3>adopted()</h3>
+<h4>Arguments</h4>
+<p><code>no args</code></p>
+<h4>Description</h4>
+<p>The callback to call when the component is moved from the current DOM Node to another DOM Node. Useful for clearing and re-instancing props dependant from the parent node.</p>
+<h4>Usage</h4>
+<pre><code class="language-js">this.adopted = () =&gt; {
+  delete this.someInstance;
+  this.someInstance = new Instance();
+};
+</code></pre>

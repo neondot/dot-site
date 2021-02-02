@@ -1,0 +1,50 @@
+<h1>DotApp</h1>
+<p>This is the main class to create your app mand mange all your components.</p>
+<pre><code class="language-js">constructor () : DotApp
+</code></pre>
+<p>The constructor reiceve no params, but before doing anything else with the app is reccomanded to call another function: <code>use(store : DotStore, router : DotRouter)</code>, this function reiceves two parameters. One is the store (an instance of the <code>DotStore</code>) class witch is a utility class created to handle your application global state, you can also create your own state system. The other is a router (an instance of the <code>DotRouter</code>) used to manage your applications first level components (also called from now on routes or views) these views are simply <code>DotComponent</code> instaces but with some additional class apis and properties. If no store is provided an empty one will be created for you and will be accessible from the <code>app.$store</code> property, if no router is provided one will be created for you and inside the router a basic empty <em>index</em> view will be initiated and the router will be accessible within the <code>app.$router</code> property.</p>
+<h3>Example</h3>
+<pre><code class="language-js">const router = new DotRouter();
+const app = new DotApp();
+app.use(false, router);
+
+app.$router; // This will be the same reference as your router from the first line
+app.$store; // This will be an empty store
+</code></pre>
+<h2>APIs</h2>
+<h3>$container</h3>
+<p>Type: <code>HTMLElement</code>
+&lt;br&gt;&lt;br&gt;
+The DOM Node used as the app container</p>
+<h3>$store</h3>
+<p>Type: <code>DotStore</code>
+&lt;br&gt;&lt;br&gt;
+The current store for the app</p>
+<h3>$router</h3>
+<p>Type: <code>DotRouter</code>
+&lt;br&gt;&lt;br&gt;
+The current router for the app</p>
+<hr>
+<h3>get $children</h3>
+<p>type: <code>readonly</code> <code>Array&lt;DotComponent&gt;</code>
+&lt;br&gt;&lt;br&gt;
+An array of all the direct children mounted on the app <code>$container</code> DOM Node.</p>
+<hr>
+<h3>create(container)</h3>
+<h4>Arguments</h4>
+<p><code>container : HTMLElement</code></p>
+<h4>Description</h4>
+<p>Append the appplication on the container</p>
+<h4>Usage</h4>
+<pre><code class="language-js">app.create(document.querySelector('#app'));
+</code></pre>
+<h3>mount(component, parent)</h3>
+<h4>Arguments</h4>
+<p><code>component : DotComponent</code>&lt;br&gt;
+<code>parent : DotComponent | null</code></p>
+<h4>Description</h4>
+<p>Programmatically mount the <code>component</code> on the <code>parent</code>. If parent is <code>null</code>, the component will
+be mounted on the app instance instead.</p>
+<h4>Usage</h4>
+<pre><code class="language-js">app.create(document.querySelector('#app'));
+</code></pre>
