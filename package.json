@@ -15,7 +15,7 @@
   "devDependencies": {},
   "scripts": {
     "serve": "snowpack dev",
-    "build": "snowpack build && touch docs/.nojekyll",
+    "build": "snowpack build && touch docs/.nojekyll && echo \"neondot.rndv.studio\" > docs/CNAME",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
