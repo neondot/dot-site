@@ -17,8 +17,8 @@ class BaseNavigator extends DotComponent {
           </div>
   
           <div class="links">
-            <router-link exportparts="a" to="/">Home</router-link>
-            <router-link exportparts="a" to="/doc">Documentation</router-link>
+            <router-link exportparts="a" to="/">Welcome</router-link>
+            <router-link exportparts="a" to="/doc">Classes</router-link>
             <router-link exportparts="a" to="/doc">Guides</router-link>
 
             <a href="https://github.com/neondot/dot" target="_blank">

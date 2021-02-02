@@ -9,6 +9,22 @@
     padding-top: 120px;
     padding-bottom: 120px;
 
+    h1 {
+      font-family: 'Beon';
+      color: $red;
+      font-weight: normal;
+      text-shadow: 0px 0px 10px $red;
+    }
+    
+    h2 {
+      font-family: 'Beon';
+      margin-top: 80px;
+      color: $violet;
+      font-weight: normal;
+      text-shadow: 0px 0px 5px $violet;
+      letter-spacing: 0.02em;
+    }
+
     a {
       text-decoration: none;
       color: $blue;
@@ -25,13 +41,13 @@
 
     code {
       color: $orange;
-      // text-shadow: 0px 0px 5px $orange;
       padding: 4px;
       border-radius: 4px;
       background-color: lighten($color: $black, $amount: 10);
     }
 
     table {
+      margin-top: 40px;
       border: 1px solid $green;
       border-radius: 10px;
       box-shadow: 0px 0px 10px $green,
@@ -39,7 +55,6 @@
 
       thead {
         th {
-          border-bottom: 1px solid $green;
           padding: 10px 15px;
 
           &:nth-child(1) {
@@ -51,6 +66,10 @@
       tbody {
         td {
           padding: 10px 15px;
+
+          &:first-child {
+            text-align: center;
+          }
         }
       }
     }
