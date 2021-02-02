@@ -1,0 +1,58 @@
+@import '../../scss/colors.scss';
+
+.md-container {
+  .container {
+    width: 80vw;
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.8em;
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    a {
+      text-decoration: none;
+      color: $blue;
+      text-shadow: 0px 0px 5px $blue;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      code {
+        color: $blue;
+      }
+    }
+
+    code {
+      color: $orange;
+      // text-shadow: 0px 0px 5px $orange;
+      padding: 4px;
+      border-radius: 4px;
+      background-color: lighten($color: $black, $amount: 10);
+    }
+
+    table {
+      border: 1px solid $green;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px $green,
+                  0px 0px 10px $green inset;
+
+      thead {
+        th {
+          border-bottom: 1px solid $green;
+          padding: 10px 15px;
+
+          &:nth-child(1) {
+            min-width: 20%;
+          }
+        }
+      }
+
+      tbody {
+        td {
+          padding: 10px 15px;
+        }
+      }
+    }
+  }
+}

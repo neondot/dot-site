@@ -1,4 +1,5 @@
 import HomeHero from '../components/HomeHero';
+import MdContainer from '../components/MdContainer';
 import { DotRoute, html, register } from '@neondot/dot';
 import gsap from 'gsap';
 
@@ -12,20 +13,10 @@ class ViewHome extends DotRoute {
 
     this.$template = () => html`
       <home-hero></home-hero>
+
+      <md-container file="/content/README.txt"></md-container>
     `;
   }
-  
-  // mounted() {
-  //   gsap.set(this.$refs.title, { y: 100, autoAlpha: 0 });
-  // }
-
-  // async enter() {
-  //   gsap.to(this.$refs.title, { y: 0, autoAlpha: 1, duration: 0.8 });
-  // }
-  
-  // async leave() {
-  //   return gsap.to(this.$refs.title, { y: -100, autoAlpha: 0, duration: 3 });
-  // }
 }
 
 register(ViewHome);
