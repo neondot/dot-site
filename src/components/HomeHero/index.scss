@@ -11,15 +11,24 @@
   justify-content: center;
 
   background-color: $black;
-
+  user-select: none;
+  
   &__title {
     font-family: 'Beon';
     font-size: 8vw;
     --shadow: 3vw;
-
+    
     span {
       color: transparent;
       -webkit-text-stroke-width: 2px;
+      cursor: pointer;
+      transition: text-shadow .4s ease,
+                  -webkit-text-stroke-color .4s ease;
+
+      &.shutted {
+        -webkit-text-stroke-color: darken($color: $white, $amount: 20) !important;
+        text-shadow: none !important;
+      }
     }
     
     span:nth-child(1) {

@@ -2,6 +2,7 @@ import { DotApp, DotRouter } from '@neondot/dot';
 import ViewHome from './views/ViewHome';
 import ViewClasses from './views/ViewClasses';
 import BaseNavigator from './components/BaseNavigator';
+import BaseFooter from './components/BaseFooter';
 import HomeHero from './components/HomeHero';
 import MdContainer from './components/MdContainer';
 
@@ -14,3 +15,5 @@ app.create(document.querySelector('#app'));
 app.mount(new BaseNavigator());
 
 app.use(false, router);
+
+app.mount(new BaseFooter());

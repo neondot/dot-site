@@ -14,23 +14,23 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="/dot/classes/DotApp"><code>DotApp</code></a></td>
+<td><router-link to="/classes/DotApp">DotApp</router-link></td>
 <td>This is the main class that describes and contains all the core functionality of your app. It is meant to be instanciated, not extended like the <code>DotComponent</code> class, and the using the method <code>create()</code> appended to a pre-created DOM Node</td>
 </tr>
 <tr>
-<td><a href="/dot/classes/DotComponent"><code>DotComponent</code></a></td>
+<td><router-link to="/classes/DotComponent">DotComponent</router-link></td>
 <td>This is the basic component class, all of your components will need to extend this class. This parent class provides all the reactive logic implemented into properties and all the necessary method to make the transition to native more friendly</td>
 </tr>
 <tr>
-<td><a href="/dot/classes/DotStore"><code>DotStore</code></a></td>
+<td><router-link to="/classes/DotStore">DotStore</router-link></td>
 <td>The store used to share the state between all your application components</td>
 </tr>
 <tr>
-<td><a href="/dot/classes/DotRouter"><code>DotRouter</code></a></td>
+<td><router-link to="/classes/DotRouter">DotRouter</router-link></td>
 <td>The router that manages your application <code>router-view</code> and handle navigation</td>
 </tr>
 <tr>
-<td><a href="/dot/classes/DotRoute"><code>DotRoute</code></a></td>
+<td><router-link to="/classes/DotRoute">DotRoute</router-link></td>
 <td>This is the class you need to extend when defining the a view for the router</td>
 </tr>
 </tbody>

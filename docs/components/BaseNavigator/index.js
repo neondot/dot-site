@@ -8,7 +8,7 @@ class BaseNavigator extends DotComponent {
 
     this.$template = () => html`
       <style>
-        @import 'components/BaseNavigator/index.css';
+        @import '/components/BaseNavigator/index.css';
       </style>
       <nav>
         <div class="container">

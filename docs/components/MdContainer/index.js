@@ -9,7 +9,7 @@ class MdContainer extends DotComponent {
 
     this.$template = () => html`
       <style>
-        @import 'components/MdContainer/index.css';
+        @import '/components/MdContainer/index.css';
       </style>
       <div class="md-container">
         <div class="container" ref="container"></div>
@@ -17,7 +17,7 @@ class MdContainer extends DotComponent {
     `;
   }
 
-  async mounted() {
+  async load() {
     const response = await fetch(this.$attributes.file);
     const result = await response.text();
     this.$refs.container.innerHTML = result;

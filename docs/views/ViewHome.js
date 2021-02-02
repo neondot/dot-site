@@ -1,5 +1,3 @@
-import HomeHero from '../components/HomeHero/index.js';
-import MdContainer from '../components/MdContainer/index.js';
 import { DotRoute, html, register } from '../_snowpack/pkg/@neondot/dot.js';
 import gsap from '../_snowpack/pkg/gsap.js';
 
@@ -14,8 +12,12 @@ class ViewHome extends DotRoute {
     this.$template = () => html`
       <home-hero></home-hero>
 
-      <md-container file="/content/README.txt"></md-container>
+      <md-container ref="container" file="/content/README.txt"></md-container>
     `;
+  }
+
+  mounted() {
+    this.$refs.container.load();
   }
 }
 

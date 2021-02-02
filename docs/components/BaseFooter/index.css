@@ -1,0 +1,21 @@
+footer {
+  padding: 20px 0px;
+  background-color: #141414;
+  font-size: 12px;
+}
+footer .container {
+  width: 80vw;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .container a {
+  color: #6fc5faff;
+  text-decoration: none;
+  text-shadow: 0px 0px 5px #6fc5faff;
+}
+footer .container a:hover {
+  text-decoration: underline;
+}

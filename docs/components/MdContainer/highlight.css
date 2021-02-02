@@ -1,5 +1,3 @@
-@import '../../scss/colors.scss';
-
 .hljs {
   display: block;
   overflow-x: auto;
@@ -9,7 +7,7 @@
 
 .hljs,
 .hljs-subst {
-  color: darken($color: $white, $amount: 10);
+  color: #cbcbcb;
 }
 
 .hljs-comment {
@@ -22,7 +20,7 @@
 .hljs-meta-keyword,
 .hljs-doctag,
 .hljs-name {
-  color: $orange;
+  color: #f6bb89ff;
   font-weight: bold;
 }
 
@@ -34,12 +32,12 @@
 .hljs-quote,
 .hljs-template-tag,
 .hljs-deletion {
-  color: $red;
+  color: #ff6ab2ff;
 }
 
 .hljs-title,
 .hljs-section {
-  color: $red;
+  color: #ff6ab2ff;
   font-weight: bold;
 }
 
@@ -50,26 +48,26 @@
 .hljs-link,
 .hljs-selector-attr,
 .hljs-selector-pseudo {
-  color: $violet;
+  color: #ffa1f3ff;
 }
 
 .hljs-literal {
-  color: $green;
+  color: #84fbcbff;
 }
 
 .hljs-built_in,
 .hljs-bullet,
 .hljs-code,
 .hljs-addition {
-  color: $orange;
+  color: #f6bb89ff;
 }
 
 .hljs-meta {
-  color: $blue;
+  color: #6fc5faff;
 }
 
 .hljs-meta-string {
-  color: $yellow;
+  color: #fae59aff;
 }
 
 .hljs-emphasis {
