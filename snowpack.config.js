@@ -13,7 +13,7 @@ module.exports = {
   plugins: [
     ['@neondot/dot-loader'],
     ['@snowpack/plugin-sass'],
-    ['./plugins/markdown-loader.js'] 
+    ['./plugins/markdown-loader.js', { html: true }] 
   ],
   routes: [
     {

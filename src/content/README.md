@@ -11,8 +11,8 @@ The framewrok mainly exposes a DotApp class witch is the entry point of the appl
 Below there is a list of all the exposed classes and their main functionality, for in-depth APIs documentation refer to the class page.
 |Class Name|Usage and Content|
 |----------|-----------------|
-|[`DotApp`](/dot/classes/DotApp)|This is the main class that describes and contains all the core functionality of your app. It is meant to be instanciated, not extended like the `DotComponent` class, and the using the method `create()` appended to a pre-created DOM Node|
-|[`DotComponent`](/dot/classes/DotComponent)|This is the basic component class, all of your components will need to extend this class. This parent class provides all the reactive logic implemented into properties and all the necessary method to make the transition to native more friendly|
-|[`DotStore`](/dot/classes/DotStore)|The store used to share the state between all your application components|
-|[`DotRouter`](/dot/classes/DotRouter)|The router that manages your application `router-view` and handle navigation|
-|[`DotRoute`](/dot/classes/DotRoute)|This is the class you need to extend when defining the a view for the router|
+|<router-link to="/classes/DotApp">DotApp</router-link>|This is the main class that describes and contains all the core functionality of your app. It is meant to be instanciated, not extended like the `DotComponent` class, and the using the method `create()` appended to a pre-created DOM Node|
+|<router-link to="/classes/DotComponent">DotComponent</router-link>|This is the basic component class, all of your components will need to extend this class. This parent class provides all the reactive logic implemented into properties and all the necessary method to make the transition to native more friendly|
+|<router-link to="/classes/DotStore">DotStore</router-link>|The store used to share the state between all your application components|
+|<router-link to="/classes/DotRouter">DotRouter</router-link>|The router that manages your application `router-view` and handle navigation|
+|<router-link to="/classes/DotRoute">DotRoute</router-link>|This is the class you need to extend when defining the a view for the router|

@@ -9,7 +9,7 @@ module.exports = function (snowpackConfig, pluginOptions) {
     },
     async load({ filePath }) {
       const code = await fs.readFile(filePath);
-      const md = new MarkdownIt();
+      const md = new MarkdownIt(pluginOptions);
       const result = md.render(code.toString());
       return result.toString();
     }
