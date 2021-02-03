@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
 
-  background-color: $black;
+  background-color: darken($color: $black, $amount: 2);
   user-select: none;
   
   &__title {
