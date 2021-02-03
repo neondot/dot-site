@@ -11,7 +11,7 @@ nav {
 
   z-index: 2;
 
-  background-color: $black;
+  background-color: darken($color: $black, $amount: 2);
   
   .container {
     width: 80vw;
