@@ -1,0 +1,19 @@
+name: Manual Build
+on:
+  workflow_dispatch:
+    inputs:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Launching build script
+      run: npm i && npm run build
+    - name: Deploying
+      run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Manual Build Workflow"
+          git push
