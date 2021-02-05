@@ -4,7 +4,7 @@
   "description": "The neondot organization website",
   "main": "index.js",
   "dependencies": {
-    "@neondot/dot": "0.0.1",
+    "@neondot/dot": "^0.0.3",
     "@neondot/dot-loader": "0.0.1",
     "@snowpack/plugin-sass": "^1.3.0",
     "gsap": "^3.6.0",
@@ -13,7 +13,6 @@
     "markdown-it": "^12.0.4",
     "snowpack": "^3.0.11"
   },
-  "devDependencies": {},
   "scripts": {
     "serve": "snowpack dev",
     "build": "snowpack build && touch docs/.nojekyll && echo \"neondot.rndv.studio\" > docs/CNAME",

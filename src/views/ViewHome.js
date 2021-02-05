@@ -7,7 +7,7 @@ class ViewHome extends DotRoute {
   constructor() {
     super();
 
-    this.path = '/';
+    this.$path = '/';
 
     this.$template = () => html`
       <home-hero></home-hero>
