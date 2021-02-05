@@ -1349,10 +1349,10 @@ class DotRouter {
     matchRoute(path) {
         var _a, _b;
         this.$route = this.$routes.find((route) => {
-            return route.path instanceof RegExp ? route.path.test(path) : route.path === path;
+            return route.$path instanceof RegExp ? route.$path.test(path) : route.$path === path;
         });
-        if (((_a = this.$route) === null || _a === void 0 ? void 0 : _a.path) instanceof RegExp) {
-            this.$route.$matches = path.match(this.$route.path);
+        if (((_a = this.$route) === null || _a === void 0 ? void 0 : _a.$path) instanceof RegExp) {
+            this.$route.$matches = path.match(this.$route.$path);
             this.$route.$params = (_b = this.$route.$matches) === null || _b === void 0 ? void 0 : _b.groups;
         }
     }
@@ -1413,7 +1413,7 @@ var __awaiter$1 = (undefined && undefined.__awaiter) || function (thisArg, _argu
 class DotRoute extends DotComponent {
     constructor() {
         super();
-        this.path = '';
+        this.$path = '';
         this.$matches = [];
         this.$params = {};
     }

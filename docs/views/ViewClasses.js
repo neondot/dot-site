@@ -6,7 +6,7 @@ class ViewClasses extends DotRoute {
   constructor() {
     super();
 
-    this.path = /\/classes\/(?<file>.*)/i;
+    this.$path = /\/classes\/(?<file>.*)/i;
 
     this.$template = () => html`
       <md-container ref="container" file="/content/classes/${this.$params.file}.txt"></md-container>
